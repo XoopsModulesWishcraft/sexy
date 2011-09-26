@@ -68,50 +68,51 @@
 			
 			$locations = array();
 			
-			$module_handler =& xoops_getmodulehandler('module','multisite');
-			$domains_handler =& xoops_getmodulehandler('domain', 'multisite');
-			
-			$critera_z = new CriteriaCompo(new Criteria('dom_catid', XOOPS_DOMAIN));
-			$critera_z->add(new Criteria('dom_name', 'domain')) ;
-			$critera_z->setSort('dom_name');
-			$domains = $domains_handler->getDomains($critera_z);
-			$sprint = str_replace($_SERVER['HTTP_HOST'], '%s', strtolower(XOOPS_URL));
-			$sprint = str_replace(array('http://','https://','HTTP://','HTTPS://'), '%s', $sprint);
-			if($alldomains==true)
-				$domain_list['all'] = _ALL_DOMAINS;
-	
-			foreach($domains as $domain)
-			{	
-				$critera_y = new CriteriaCompo();
-				$critera_y->add(new Criteria('dom_pid', $domain->getVar('dom_id')));
-				$critera_y->add(new Criteria('dom_name', 'sitename')) ;
-				$critera_y->setSort('dom_name');
-				$domains_y = $domains_handler->getDomains($critera_y);
-	
-				if ($justaddr==false)
-				{
-					if (!$domains_handler->getDomainCount($critera_y)){
-						$domain_list[urlencode(sprintf($sprint ,"http://",$domain->getVar('dom_value')))] = sprintf($sprint ,"http://",$domain->getVar('dom_value'));
-						if ($https==true)
-							$domain_list[urlencode(sprintf($sprint ,"https://",$domain->getVar('dom_value')))] = sprintf($sprint ,"https://",$domain->getVar('dom_value'));
+			if ($GLOBALS['xoopsModuleConfig']['multisite']) {
+	 			$module_handler =& xoops_getmodulehandler('module','multisite');
+				$domains_handler =& xoops_getmodulehandler('domain', 'multisite');
+				
+				$critera_z = new CriteriaCompo(new Criteria('dom_catid', XOOPS_DOMAIN));
+				$critera_z->add(new Criteria('dom_name', 'domain')) ;
+				$critera_z->setSort('dom_name');
+				$domains = $domains_handler->getDomains($critera_z);
+				$sprint = str_replace($_SERVER['HTTP_HOST'], '%s', strtolower(XOOPS_URL));
+				$sprint = str_replace(array('http://','https://','HTTP://','HTTPS://'), '%s', $sprint);
+				if($alldomains==true)
+					$domain_list['all'] = _ALL_DOMAINS;
+		
+				foreach($domains as $domain)
+				{	
+					$critera_y = new CriteriaCompo();
+					$critera_y->add(new Criteria('dom_pid', $domain->getVar('dom_id')));
+					$critera_y->add(new Criteria('dom_name', 'sitename')) ;
+					$critera_y->setSort('dom_name');
+					$domains_y = $domains_handler->getDomains($critera_y);
+		
+					if ($justaddr==false)
+					{
+						if (!$domains_handler->getDomainCount($critera_y)){
+							$domain_list[urlencode(sprintf($sprint ,"http://",$domain->getVar('dom_value')))] = sprintf($sprint ,"http://",$domain->getVar('dom_value'));
+							if ($https==true)
+								$domain_list[urlencode(sprintf($sprint ,"https://",$domain->getVar('dom_value')))] = sprintf($sprint ,"https://",$domain->getVar('dom_value'));
+						} else {
+							$domain_list[urlencode(sprintf($sprint ,"http://",$domain->getVar('dom_value')))] = "".$domains_y[0]->getVar('dom_value');				
+							if ($https==true)
+								$domain_list[urlencode(sprintf($sprint ,"https://",$domain->getVar('dom_value')))] = "(secure) - ".$domains_y[0]->getVar('dom_value');
+						}
 					} else {
-						$domain_list[urlencode(sprintf($sprint ,"http://",$domain->getVar('dom_value')))] = "".$domains_y[0]->getVar('dom_value');				
-						if ($https==true)
-							$domain_list[urlencode(sprintf($sprint ,"https://",$domain->getVar('dom_value')))] = "(secure) - ".$domains_y[0]->getVar('dom_value');
+						if (!$domains_handler->getDomainCount($critera_y)){
+							$domain_list[$domain->getVar('dom_value')] = sprintf($sprint ,"http://",$domain->getVar('dom_value'));
+							if ($https==true)
+								$domain_list[$domain->getVar('dom_value')] = sprintf($sprint ,"https://",$domain->getVar('dom_value'));
+						} else {
+							$domain_list[$domain->getVar('dom_value')] = "".$domains_y[0]->getVar('dom_value');				
+							if ($https==true)
+								$domain_list[$domain->getVar('dom_value')] = "(secure) - ".$domains_y[0]->getVar('dom_value');
+						}
 					}
-				} else {
-					if (!$domains_handler->getDomainCount($critera_y)){
-						$domain_list[$domain->getVar('dom_value')] = sprintf($sprint ,"http://",$domain->getVar('dom_value'));
-						if ($https==true)
-							$domain_list[$domain->getVar('dom_value')] = sprintf($sprint ,"https://",$domain->getVar('dom_value'));
-					} else {
-						$domain_list[$domain->getVar('dom_value')] = "".$domains_y[0]->getVar('dom_value');				
-						if ($https==true)
-							$domain_list[$domain->getVar('dom_value')] = "(secure) - ".$domains_y[0]->getVar('dom_value');
-					}
-				}
-			}	
-
+				}	
+			}
 
 			$profile = $profile_handler->get($pid);
 			$profile_array = $profile->toArray();
