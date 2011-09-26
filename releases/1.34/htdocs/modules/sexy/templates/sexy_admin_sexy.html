@@ -1,0 +1,34 @@
+<h2>Sexy Profiles on the System</h2>
+<{if $pagenav}><div style="clear:both; float:right;"><{$pagenav}></div><{/if}>
+<table width="100%">
+<tr class="head">
+	<td>Alias</td>
+	<td>Name</td>
+	<td>Age</td>
+	<td>Sex</td>
+	<td>SMS</td>        
+	<td>Mobile</td>
+    <td>Landline</td>
+    <td>Actions</td>
+</tr>
+<{foreach from=$sexy item=profile}>
+<tr class="<{cycle value='odd,even'}>">
+	<td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.alias}></a></td>
+	<td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.name}></a></td>
+	<td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.age}></a></td>
+	<td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.sex}></a></td>        
+	<td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.sms}></a></td>
+    <td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.mobile}></a></td>
+    <td><a href="<{$xoops_url}>/modules/sexy/?pid=<{$profile.pid}>"><{$profile.landline}></a></td>    
+   	<td><{if $profile.approved}><a href="<{$xoops_url}>/modules/sexy/admin/admin.php?op=pictures&pid=<{$profile.pid}>">Edit Pictures</a>
+    	&nbsp;|&nbsp;
+    	<a href="<{$xoops_url}>/modules/sexy/admin/admin.php?op=prices&pid=<{$profile.pid}>">Edit Prices</a>
+    	&nbsp;|&nbsp;
+    	<a href="<{$xoops_url}>/modules/sexy/admin/admin.php?op=profile&pid=<{$profile.pid}>">Edit Profile</a>
+    	<{else}>
+    	<a href="<{$xoops_url}>/modules/sexy/admin/admin.php?op=approve&pid=<{$profile.pid}>">Approve Profile</a>
+    	<{/if}>
+    </td>
+</tr>
+<{/foreach}>
+</table>
