@@ -1,0 +1,13 @@
+<h1>Members</h1>
+<div style="clear:both; text-align:right; width:100%"><{$pagenav}></div>
+<table width="100%">
+<tr>
+<{foreach from=$images item=picture}>
+    <td><center><a href="<{$picture.profile}>"><img border="0" <{$pictures_extra}> src="<{$picture.url}>" alt="<{$picture.alt}>" /></a></center></td>
+    <{if $picture.newline}></tr><tr><{/if}>
+<{/foreach}>
+<{if $colspan != 4}>
+<td colspan="<{$colspan}>">&nbsp;</td>
+<{/if}>
+</tr>
+</table>

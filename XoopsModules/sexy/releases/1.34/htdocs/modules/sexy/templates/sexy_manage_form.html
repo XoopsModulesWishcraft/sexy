@@ -1,0 +1,12 @@
+<div style="clear:both; text-align:right; width:100%"><{$pagenav}></div>
+<table width="100%">
+<tr>
+<{foreach from=$images item=picture}>
+    <td><center><img <{$pictures_extra}> src="<{$picture.url}>" /><br/><a href="<{$picture.delete}>">Delete</a>&nbsp;|&nbsp;<a href="<{$picture.edit}>">Edit</a></center></td>
+    <{if $picture.newline}></tr><tr><{/if}>
+<{/foreach}>
+<{if $colspan != 4}>
+<td colspan="<{$colspan}>">&nbsp;</td>
+<{/if}>
+</tr>
+</table>

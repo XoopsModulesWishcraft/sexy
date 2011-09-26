@@ -1,0 +1,296 @@
+<script type="text/javascript">
+	document.write('<style>.noscript { display: none; }</style>');
+</script>
+<div style="clear:none;>
+    <div style="clear:none;>
+        <h1>Biograph</h1>
+        <{if $physique}>
+        <span style="clear:none; float:left; padding:15px 15px 15px 15px; width:34%; font-size:0.75em;">
+        
+            <{if $physique.race}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Race/Creed:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.race}></div>
+            </div><{/if}>
+            <{if $physique.sex}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Dress Orintation:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.sex}></div>
+            </div><{/if}>
+            <{if $physique.height}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Height:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.height}></div>
+            </div><{/if}>
+            <{if $physique.weight}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Weight:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.weight}></div>
+            </div><{/if}>
+            <{if $physique.dresssize}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Dress Size:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.dresssize}></div>
+            </div><{/if}>
+            <{if $physique.shirtsize}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Shirt Size:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.shirtsize}></div>
+            </div><{/if}>
+            <{if $physique.pantssize}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Pants Size:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.pantssize}></div>
+            </div><{/if}>
+            <{if $physique.bust}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Bust Size:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.bust}></div>
+            </div><{/if}>
+            <{if $physique.hair}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Hair Colour:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.hair}></div>
+            </div><{/if}>
+            <{if $physique.eyes}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Eyes:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.eyes}></div>
+            </div><{/if}>
+            <{if $physique.bodyhair}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Body Hair:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.bodyhair}></div>
+            </div><{/if}>
+            <{if $physique.penissize}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Penis Size:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.penissize}></div>
+            </div><{/if}>
+            <{if $physique.foreskin}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Foreskin:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.foreskin}></div>
+            </div><{/if}>
+            <{if $physique.position}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Positions:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.position}>
+            </div><{/if}>
+            <{if $physique.physique}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Build:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.physique}></div>
+            </div><{/if}>
+            <{if $physique.Piercings}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Piercings?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.piercings}></div>
+            </div><{/if}>
+            <{if $physique.tattoos}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Tattoo's?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.tattoos}></div>
+            </div><{/if}>
+            <{if $physique.drugs}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Drugs?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.drugs}></div>
+            </div><{/if}>
+            <{if $physique.smoking}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Smoking?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.smoking}></div>
+            </div><{/if}>
+            <{if $physique.alcohol}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Alcohol?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.alcohol}></div>
+            </div><{/if}>
+            <{if $physique.actions_txt}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Actions:</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.actions_txt}></div>
+            </div><{/if}>
+            <{if $physique.services_txt}><div style="clear:both;">
+                <div style="float:left; clear:none;background-color:#990000; color:#FFFFFF; width:40%;">Services?</div>
+                <div style="float:left; clear:none;background-color:#FEEDBB; color:#003300; width: 60%;"><{$physique.services_txt}></div>
+            </div><{/if}>         
+        </div>
+    </span>
+    <span style="position:absolute; left:38%; clear:none; float:right; width:560px; height:385px; overflow:scroll;"><{$profile.bio}></span>    
+    <{else}>
+    <p><{$profile.bio}></p>    
+	<{/if}>
+</div>
+<hr />
+<div id="page">
+	<div id="container">
+        <h1><a href="index.php">Gallery</a></h1>
+        <h2><{$profile.alias}> - <{$profile_profile.Sex}> Escort (<{$profile.sexuality}>) - <{$profile.age}> years</h2>
+        <div style="float:right; clear:none; width:45%; font-size:1.02em; font-style:oblique">
+        	<h2>Contact Details</h2>
+            <ul style="list-style:square;">
+            	<li><strong>Incall:</strong>&nbsp;<{$profile.incall}></li>
+                <li><strong>Outcall:</strong>&nbsp;<{$profile.outcall}></li>
+				<{if $profile.sms}><li><strong>SMS:</strong>&nbsp;<{$profile.sms}></li><{/if}>
+                <{if $profile.mobile}><li><strong>Mobile:</strong>&nbsp;<{$profile.mobile}></li><{/if}>
+                <{if $profile.landline}><li><strong>Landline:</strong>&nbsp;<{$profile.landline}></li><{/if}>
+            	<{if $tagbar}><li><{include file="db:tag_bar.html"}></li><{/if}>
+        	</ul>
+            <{if $urls}>
+            <h2>Urls and Links</h2>
+            <ul style="list-style:disc;">
+                <{foreach from=$urls item=url}>
+                <{if $url.type != 'other'}>
+                <li><{$url.type}> :: <a href="<{$url.url}>"><{$url.title}></a></li>
+                <{elseif $url.other != ''}>
+                <li><{$url.other}> :: <a href="<{$url.url}>"><{$url.title}></a></li>
+                <{else}>
+                <li><{$url.type}> :: <a href="<{$url.url}>"><{$url.title}></a></li>
+                <{/if}>
+                <{/foreach}>
+            </ul>
+            <{/if}>
+            <{if $prices}>
+            <h2>Prices</h2>
+            <ul style="list-style:disc;">
+                <{foreach from=$prices item=price}>
+                <{if $price.event}> 
+                <li><{$price.event}> :: <strong><{$price.price}> <{$price.currency}></strong> ::<{if $price.day}><{$price.day}><{/if}><{if $price.time-start}>,&nbsp;Start:&nbsp;<{$price.time-start}>&nbsp;<{/if}><{if $price.time-end}>Ending:&nbsp;<{$price.time-end}>&nbsp;<{/if}><{if $price.type}>-&nbsp;<em><{$price.type}></em><{/if}></li>
+				<{elseif $price.type}>
+                <li><{$price.type}> :: <strong><{$price.price}> <{$price.currency}></strong> ::<{if $price.day}><{$price.day}><{/if}><{if $price.time-start}>,&nbsp;Start:&nbsp;<{$price.time-start}>&nbsp;<{/if}><{if $price.time-end}>Ending:&nbsp;<{$price.time-end}>&nbsp;<{/if}><{if $price.event}>-&nbsp;<em><{$price.event}></em><{/if}></li>
+				<{elseif $price.price}>
+                <li><strong><{$price.price}> <{$price.currency}></strong> ::<{if $price.day}><{$price.day}><{/if}><{if $price.time-start}>,&nbsp;Start:&nbsp;<{$price.time-start}>&nbsp;<{/if}><{if $price.time-end}>Ending:&nbsp;<{$price.time-end}><{/if}></li>               
+                <{/if}>
+                <{/foreach}>
+            </ul>
+            <{/if}>
+
+        </div>
+
+        <div style="float:right; clear:none; width:55%; font-size:1.02em; font-style:oblique">
+       	<{if $locations.domains || $locations.locations}>
+        <h2>Areas and Locations</h2>
+        <ul style="list-style:square;">
+        	<{if $locations.domains}>
+            <li>Advertising Locations
+            <ul style="list-style:disc;">
+                <{foreach from=$locations.domains item=location}>
+                <li><a href="<{$location.url}>"><{$location.name}></a></li>
+                <{/foreach}>
+            </ul>
+            </li>
+            <{/if}>
+            <{if $locations.locations}>
+            <li>Service Areas
+            <ul style="list-style:disc;">
+                <{foreach from=$locations.locations item=location}>
+                <li><{$location.code}> :: <{$location.name}></li>
+                <{/foreach}>
+            </ul>
+            </li>
+            <{/if}>                
+        </ul>
+        <{/if}>
+        </div>
+        <{if $images }>
+        <!-- Start Advanced Gallery Html Containers -->
+        <div id="gallery" class="content">
+            <div id="controls" class="controls"></div>
+            <div class="slideshow-container">
+                <div id="loading" class="loader"></div>
+                <div id="slideshow" class="slideshow"></div>
+            </div>
+            <div id="caption" class="caption-container"></div>
+        </div>
+        <div id="thumbs" class="navigation">
+        <ul class="thumbs noscript">
+            <{foreach from=$images item=picture}>
+            <li>
+                <a class="thumb" name="<{$picture.id}>" href="<{$picture.orginal}>" title="<{$picture.title}>">
+                    <img src="<{$picture.thumbnail}>" alt="<{$picture.title}>" />
+                </a>
+                <div class="caption">
+	                <div class="download">
+                    <a href="<{$picture.download}>">Download Original</a>
+                    </div>
+                    <div class="image-title"><{$picture.title}></div>
+                    <div class="image-desc"><{$picture.description}></div>
+                </div>
+            </li>
+            <{/foreach}>
+        </ul>
+    	</div>
+        <{/if}>
+	</div>
+</div>
+<hr/>
+<p style="clear:both; height:170px;">&nbsp;</p>
+<{if $profile.columntwo && $profile.columnone}>
+<p style="clear:both; padding-top:10px;">
+        <div style="float:right; clear:none; width:48%; font-size:0.85em;">
+        	<{$profile.columntwo}>
+        </div>
+        <div style="float:left; clear:none; width:48%; font-size:0.85em;">
+        	<{$profile.columnone}>
+        </div>
+</p>
+<{elseif $profile.columntwo}><p style="clear:both; padding-top:10px;"><{$profile.columntwo}></p>
+<{elseif $profile.columnone}><p style="clear:both; padding-top:10px;"><{$profile.columnone}></p><{/if}>
+<div style="clear:both; height:10px;">&nbsp;</div>
+<{if $profile.footer}><p style="clear:both; padding-top:10px;"><{$profile.footer}></p><{/if}>
+
+<p style="clear:both;"><{if $nocomments == 0}>
+<div style="text-align: center; padding: 3px; margin: 3px;">
+  <{$commentsnav}>
+  <{$lang_notice}>
+</div> 
+<div style="margin: 3px; padding: 3px;">
+<!-- start comments loop -->
+<{if $comment_mode == "flat"}>
+  <{include file="db:system_comments_flat.html"}>
+<{elseif $comment_mode == "thread"}>
+  <{include file="db:system_comments_thread.html"}>
+<{elseif $comment_mode == "nest"}>
+  <{include file="db:system_comments_nest.html"}>
+<{/if}>
+<!-- end comments loop -->
+</div>
+<{/if}></p>
+<p style="clear:both; height:10px;">&nbsp;</p>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	// We only want these styles applied when javascript is enabled
+	$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+	$('div.content').css('display', 'block');
+
+	// Initially set opacity on thumbs and add
+	// additional styling for hover effect on thumbs
+	var onMouseOutOpacity = 0.67;
+	$('#thumbs ul.thumbs li').opacityrollover({
+		mouseOutOpacity:   onMouseOutOpacity,
+		mouseOverOpacity:  1.0,
+		fadeSpeed:         'fast',
+		exemptionSelector: '.selected'
+	});
+	
+	// Initialize Advanced Galleriffic Gallery
+	var gallery = $('#thumbs').galleriffic({
+		delay:                     2500,
+		numThumbs:                 15,
+		preloadAhead:              10,
+		enableTopPager:            true,
+		enableBottomPager:         true,
+		maxPagesToShow:            7,
+		imageContainerSel:         '#slideshow',
+		controlsContainerSel:      '#controls',
+		captionContainerSel:       '#caption',
+		loadingContainerSel:       '#loading',
+		renderSSControls:          true,
+		renderNavControls:         true,
+		playLinkText:              'Play Slideshow',
+		pauseLinkText:             'Pause Slideshow',
+		prevLinkText:              '&lsaquo; Previous Photo',
+		nextLinkText:              'Next Photo &rsaquo;',
+		nextPageLinkText:          'Next &rsaquo;',
+		prevPageLinkText:          '&lsaquo; Prev',
+		enableHistory:             false,
+		autoStart:                 false,
+		syncTransitions:           true,
+		defaultTransitionDuration: 900,
+		onSlideChange:             function(prevIndex, nextIndex) {
+			// 'this' refers to the gallery, which is an extension of $('#thumbs')
+			this.find('ul.thumbs').children()
+				.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+				.eq(nextIndex).fadeTo('fast', 1.0);
+		},
+		onPageTransitionOut:       function(callback) {
+			this.fadeTo('fast', 0.0, callback);
+		},
+		onPageTransitionIn:        function() {
+			this.fadeTo('fast', 1.0);
+		}
+	});
+});
+</script>
+
