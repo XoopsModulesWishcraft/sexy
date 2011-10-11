@@ -1,0 +1,22 @@
+<h2>Create a show</h2>
+<{$form}>
+<h2>Sexy Profiles doing shows</h2>
+<{if $pagenav}><div style="clear:both; float:right;"><{$pagenav}></div><{/if}>
+<table width="100%">
+<tr class="head">
+	<td>Person</td>
+	<td>Prebook</td>
+	<td>Discount</td>
+	<td>Percentage</td>
+	<td>Amount</td>        
+</tr>
+<{foreach from=$shows item=show}>
+<tr class="<{cycle value='odd,even'}>">
+	<td><{$show.pid}></td>
+	<td><{$show.prebook}></td>
+	<td><{$show.discount}></td>
+	<td><{$show.percentage}>%</td>        
+	<td><{$show.amount}></td>
+</tr>
+<{/foreach}>
+</table>
