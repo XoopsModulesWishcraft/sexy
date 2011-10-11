@@ -1,0 +1,154 @@
+<h1><{$smarty.const._SXY_MF_BOOK_H1}><{$profile.alias}></h1>
+<p><{$smarty.const._SXY_MF_BOOK_P1}></p>
+<{if $already}>
+<p align="center" style="font-size:1.35em;"><{$smarty.const._SXY_MF_BOOK_ALREADY_MADE_P}></p>
+<{else}>
+<h2><{$smarty.const._SXY_MF_BOOK_DETAILS}></h2>
+<p>
+	<{$smarty.const._SXY_MF_BOOK_SEXY_ACTOR}>:&nbsp;<{$profile.alias}><br/>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_NAME}>:&nbsp;<{$show.name}><br/><br/>
+<{if $show.discount eq 'Yes'}>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_AMOUNT}>:&nbsp;<{$show.number.amount}>&nbsp;<{$currency}><br/>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_DISCOUNT_PERCENTILE}>:&nbsp;<{$show.number.percentage}>%<br/>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_DISCOUNT_TOTAL}>:&nbsp;<{$show.number.discount}>&nbsp;<{$currency}><br/>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_TOTAL}>:&nbsp;<{$show.number.total}>&nbsp;<{$currency}><br/><br/>
+<{else}>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_AMOUNT}>:&nbsp;<{$show.number.amount}>&nbsp;<{$currency}><br/>
+	<{$smarty.const._SXY_MF_BOOK_SHOW_TOTAL}>:&nbsp;<{$show.number.total}>&nbsp;<{$currency}><br/><br/>
+<{/if}>
+	<{$smarty.const._SXY_MF_BOOK_WHEN_START}>:&nbsp;<{$show.time.hours}><{$smarty.const._SXY_MF_BOOK_HOURS}>&nbsp;<{$show.time.minutes}><{$smarty.const._SXY_MF_BOOK_MINUTES}>(<{$show.date.when}>)<br/>
+</p>
+<{if $show.able_for_booking}>
+<p>
+	<center>
+		<form action="<{$xoops_url}>/modules/xpayment/" method="post">
+			<!-- This is the header of the invoice -->
+			<input type="hidden" name="op" value="createinvoice">
+			<input type="hidden" name="plugin" value="sexy">
+			<input type="hidden" name="drawfor" value="<{$xoops_sitename}>"><br/>
+<{if $user}>
+			<label><{$smarty.const._SXY_MF_BOOK_YOUR_NAME}>&nbsp;<{$user.firstname}> <{$user.lastname}> (<{$user.uname}>)</label><br/>
+			<label><{$smarty.const._SXY_MF_BOOK_YOUR_EMAIL}>&nbsp;<{$user.email}></label>
+			<input type="hidden" name="drawto" value="<{$user.firstname}> <{$user.lastname}> (<{$user.uname}>)">
+			<input type="hidden" name="drawto_email" value="<{$user.email}>">
+<{else}>
+			<label><{$smarty.const._SXY_MF_BOOK_YOUR_NAME}>&nbsp;</label><input type="text" name="drawto" value="" size="15" maxlen="128"><br/>
+			<label><{$smarty.const._SXY_MF_BOOK_YOUR_EMAIL}>&nbsp;</label><input type="text" name="drawto_email" value="" size="15" maxlen="128"><br/>
+<{/if}>
+			<label><{$smarty.const._SXY_MF_BOOK_INVOICE_AMOUNT}>&nbsp;<{$show.number.grandtotal}></label>
+			<input type="hidden" name="currency" value="<{$currency}>">
+			<input type="hidden" name="key" value="<{$show.sid}>|<{$show.pid}>|<{$user.uid}>|<{$webcam.user_id}>">
+			<input type="hidden" name="weight_unit" value="kgs">
+			<!-- This is the item trail of the invoice -->
+			
+			<!-- Example Item A -->
+			<input type="hidden" name="item[A][cat]" value="<{$show.cat}>">
+			<input type="hidden" name="item[A][name]" value="<{$show.name}>">
+			<input type="hidden" name="item[A][amount]" value="<{$show.number.grand}>">
+			<input type="hidden" name="item[A][quantity]" value="1">
+			<input type="hidden" name="item[A][shipping]" value="0.00">
+			<input type="hidden" name="item[A][handling]" value="0.00">
+			<input type="hidden" name="item[A][weight]" value="0.00">
+			<input type="hidden" name="item[A][tax]" value="0">
+			
+			<!-- This is the footer of the invoice -->
+			<input type="hidden" name="return" value="<{$xoops_url}>/modules/sexy/index.php">
+			<input type="hidden" name="cancel" value="<{$xoops_url}>/modules/sexy/index.php">
+			<input type="submit" name='submit' value="<{$smarty.const._SXY_MF_BOOK_MAKE_INVOICE}>" />
+		</form>
+	</center>
+</p>
+<{else}>
+<p align="center" style="font-size:1.35em;"><{$smarty.const._SXY_MF_BOOK_PREBOOKING_NOT_POSSIBLE_P}></p>
+<{/if}>
+<{/if}>
+<{if $images }>
+<div style='clear:both;'>&nbsp;</div>
+<h2><{$smarty.const._SXY_MF_BOOK_ACTOR_IMAGES}></h2>
+<div id="gallery">
+	<div id="container">
+        <!-- Start Advanced Gallery Html Containers -->
+        <div id="gallery" class="content">
+            <div id="controls" class="controls"></div>
+            <div class="slideshow-container">
+                <div id="loading" class="loader"></div>
+                <div id="slideshow" class="slideshow"></div>
+            </div>
+            <div id="caption" class="caption-container"></div>
+        </div>
+        <div id="thumbs" class="navigation">
+        <ul class="thumbs noscript">
+            <{foreach from=$images item=picture}>
+            <li>
+                <a class="thumb" name="<{$picture.id}>" href="<{$picture.orginal}>" title="<{$picture.title}>">
+                    <img src="<{$picture.thumbnail}>" alt="<{$picture.title}>" width="120px"/>
+                </a>
+                <div class="caption">
+	                <div class="download">
+                    <a href="<{$picture.download}>">Download Original</a>
+                    </div>
+                    <div class="image-title"><{$picture.title}></div>
+                    <div class="image-desc"><{$picture.description}></div>
+                </div>
+            </li>
+            <{/foreach}>
+        </ul>
+    	</div>
+	</div>
+</div>
+<{/if}>
+<script type="text/javascript">
+jQuery(document).ready(function($) {
+	// We only want these styles applied when javascript is enabled
+	$('div.navigation').css({'width' : '300px', 'float' : 'left'});
+	$('div.content').css('display', 'block');
+
+	// Initially set opacity on thumbs and add
+	// additional styling for hover effect on thumbs
+	var onMouseOutOpacity = 0.67;
+	$('#thumbs ul.thumbs li').opacityrollover({
+		mouseOutOpacity:   onMouseOutOpacity,
+		mouseOverOpacity:  1.0,
+		fadeSpeed:         'fast',
+		exemptionSelector: '.selected'
+	});
+	
+	// Initialize Advanced Galleriffic Gallery
+	var gallery = $('#thumbs').galleriffic({
+		delay:                     2500,
+		numThumbs:                 15,
+		preloadAhead:              10,
+		enableTopPager:            true,
+		enableBottomPager:         true,
+		maxPagesToShow:            7,
+		imageContainerSel:         '#slideshow',
+		controlsContainerSel:      '#controls',
+		captionContainerSel:       '#caption',
+		loadingContainerSel:       '#loading',
+		renderSSControls:          true,
+		renderNavControls:         true,
+		playLinkText:              'Play Slideshow',
+		pauseLinkText:             'Pause Slideshow',
+		prevLinkText:              '&lsaquo; Previous Photo',
+		nextLinkText:              'Next Photo &rsaquo;',
+		nextPageLinkText:          'Next &rsaquo;',
+		prevPageLinkText:          '&lsaquo; Prev',
+		enableHistory:             false,
+		autoStart:                 false,
+		syncTransitions:           true,
+		defaultTransitionDuration: 900,
+		onSlideChange:             function(prevIndex, nextIndex) {
+			// 'this' refers to the gallery, which is an extension of $('#thumbs')
+			this.find('ul.thumbs').children()
+				.eq(prevIndex).fadeTo('fast', onMouseOutOpacity).end()
+				.eq(nextIndex).fadeTo('fast', 1.0);
+		},
+		onPageTransitionOut:       function(callback) {
+			this.fadeTo('fast', 0.0, callback);
+		},
+		onPageTransitionIn:        function() {
+			this.fadeTo('fast', 1.0);
+		}
+	});
+});
+</script>

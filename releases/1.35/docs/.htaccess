@@ -1,0 +1,10 @@
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^sexy/(.*?)/(.*?)/profile,([0-9]+).html 																	modules/sexy/index.php?op=profile&fct=escort&pid=$3 			[L,NC,QSA]
+RewriteRule ^sexy/(.*?)/(.*?)/book,([0-9]+).html 																		modules/sexy/book.php?op=show&fct=webcams&sid=$3 				[L,NC,QSA]
+RewriteRule ^sexy/index,([a-zA-Z0-9]+),([a-zA-Z0-9]+),([0-9]+),([0-9]+).html 											modules/sexy/index.php?op=$1&fct=$2&start=$3&limit=$4 			[L,NC,QSA]
+RewriteRule ^sexy/ 																										modules/sexy/index.php 											[L,NC,QSA]
+RewriteRule ^sexy 																										modules/sexy/index.php 											[L,NC,QSA]
