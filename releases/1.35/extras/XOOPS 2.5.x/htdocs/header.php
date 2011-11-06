@@ -16,7 +16,7 @@
  * @author          Kazumi Ono <webmaster@myweb.ne.jp>
  * @author          Skalpa Keo <skalpa@xoops.org>
  * @author          Taiwen Jiang <phppp@users.sourceforge.net>
- * @version         $Id: header.php 4941 2010-07-22 17:13:36Z beckmi $
+ * @version         $Id$
  */
  
 defined('XOOPS_ROOT_PATH') or die('Restricted access');

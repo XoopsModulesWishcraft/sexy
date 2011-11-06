@@ -21,7 +21,7 @@
  * @author          Skalpa Keo <skalpa@xoops.org>
  * @author          Taiwen Jiang <phppp@users.sourceforge.net>
  * @author          John Neill <catzwolf@xoops.org>
- * @version         $Id: formcheckbox.php 3988 2009-12-05 15:46:47Z trabis $
+ * @version         $Id$
  */
 defined('XOOPS_ROOT_PATH') or die('Restricted access');
 

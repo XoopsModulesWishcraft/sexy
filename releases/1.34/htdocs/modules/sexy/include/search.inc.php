@@ -1,5 +1,5 @@
 <?php
-// $Id: search.inc.php,v 4.04 2008/06/05 15:35:33 wishcraft Exp $
+// $Id$
 //  ------------------------------------------------------------------------ //
 //                XOOPS - PHP Content Management System                      //
 //                    Copyright (c) 2000 XOOPS.org                           //
